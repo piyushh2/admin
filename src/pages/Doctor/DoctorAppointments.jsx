@@ -38,8 +38,7 @@ const DoctorAppointments = () => {
               <p className='max-sm:hidden'>{calculateAge(item.userData.dob)}</p>
               <p>{slotDateFormat(item.slotDate)}, {item.slotTime}</p>
               <div>
-                {/* <p className='text-xs inline border p-2 rounded-full'>{item.isCompleted ? "Completed" : item.cancelled ? "Cancelled" : "Pending"}</p> */}
-                <p className='text-xs inline border p-2 rounded-full'>{item.payment}</p>
+                <p className='text-xs inline border p-2 rounded-full'>{item.isCompleted ? "Paid" : item.cancelled ? "N/A" : "Pending"}</p>
               </div>
               <p>{currency} {item.amount}</p>
               {
