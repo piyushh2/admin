@@ -14,7 +14,7 @@ const AdminContextProvider = (props) => {
 
   const getAllDoctors = async () => {
     try {
-      const { data } = await axios.post(`${backendUrl}api/admin/all-doctors`, {}, { headers: { aToken } });
+      const { data } = await axios.post(`${backendUrl}/api/admin/all-doctors`, {}, { headers: { aToken } });
       if (data.success) {
         setDoctors(data.doctors);
       }
@@ -27,7 +27,7 @@ const AdminContextProvider = (props) => {
 
   const getAllAppointments = async () => {
     try {
-      const { data } = await axios.get(`${backendUrl}api/admin/appointments`, { headers: { aToken } })
+      const { data } = await axios.get(`${backendUrl}/api/admin/appointments`, { headers: { aToken } })
       if (data.success) {
         setAppointments(data.appointments)
       }
@@ -39,7 +39,7 @@ const AdminContextProvider = (props) => {
 
   const cancelAppointment = async (appointmentId) => {
     try {
-      const { data } = await axios.post(`${backendUrl}api/admin/cancel-appointment`, { appointmentId }, { headers: { aToken } })
+      const { data } = await axios.post(`${backendUrl}/api/admin/cancel-appointment`, { appointmentId }, { headers: { aToken } })
       if (data.success) {
         toast.success(data.message)
         getAllAppointments()
@@ -52,7 +52,7 @@ const AdminContextProvider = (props) => {
 
   const getDashboardData = async () => {
     try {
-      const { data } = await axios.get(`${backendUrl}api/admin/dashboard`, { headers: { aToken } })
+      const { data } = await axios.get(`${backendUrl}/api/admin/dashboard`, { headers: { aToken } })
       if (data.success) setDashboardData(data.dashboardData)
       else toast.error(data.message)
     } catch (error) {
