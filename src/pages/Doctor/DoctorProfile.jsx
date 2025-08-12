@@ -65,7 +65,7 @@ const DoctorProfile = () => {
           {edit ?
             <button className='px-5 py-1.5 border text-sm rounded-full mt-6 hover:bg-[#5F6FFF] hover:text-white transition-all' onClick={updateProfile}>Save Changes</button>
             :
-            <button className='px-5 py-1.5 border text-sm rounded-full mt-6 hover:bg-[#5F6FFF] hover:text-white transition-all' onClick={() => setEdit(true)}>Edit</button>
+            <button className='px-5 py-1.5 border text-sm rounded-full mt-6 hover:bg-[#5F6FFF] hover:text-white transition-all cursor-pointer' onClick={() => setEdit(true)}>Edit</button>
           }
         </div>
       </div>
